@@ -5,20 +5,22 @@ https://airflow.apache.org/docs/stable/
 # Purpose 
 Create a DAG which will connect to mssql server and run simple stored procedure to create table.
 
-# System Requirements - 
+# System Requirements 
 Airflow doesn't officially support running on Windows. Need a setup on a Linux VM. 
 Install Oracle VM VirtualBox on Windows system and setup Ubuntu OS. 
 
-# Installation Guide - 
+# Installation Guide 
 > Install python on Ubuntu :
 
 $ sudo apt update
+
 $ sudo apt-get install python3.6
 
 From sqlAlchemy docs - The SQL Server dialect uses pyodbc as the default DBAPI.
 > Install pyodbc :
 
 https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15 
+
 $ pip3 install pyodbc
 
 > Install Apache-Airflow :
@@ -38,15 +40,17 @@ https://airflow.apache.org/docs/stable/timezone.html
 
 # Setup DAG and Airflow UI
 Airflow - Initiation of DB in MSSQL Server. Creates all metadata tables for the application, it is responsible to setup backend
+
 $ airflow initdb
 
 start the web server, default port is 8080
+
 $ airflow webserver -p 8080
 
 1. Edit coonnections inside airflow UI --> Admin --> Connections
 2. Create DAG - repo contains an example DAG. Set mssql_conn_id = '<newly_created_connection>'
 
-# Checkpoints while running DAG- 
+# Checkpoints while running DAG
 •	check if airflow scheduler is running 
 
 •	check if airflow webserver is running 

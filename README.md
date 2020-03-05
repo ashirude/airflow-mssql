@@ -11,15 +11,18 @@ Install Oracle VM VirtualBox on Windows system and setup Ubuntu OS.
 
 # Installation Guide - 
 > Install python on Ubuntu :
+
 $ sudo apt update
 $ sudo apt-get install python3.6
 
 From sqlAlchemy docs - The SQL Server dialect uses pyodbc as the default DBAPI.
 > Install pyodbc :
+
 https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15 
 $ pip3 install pyodbc
 
 > Install Apache-Airflow :
+
 Refer : https://airflow.readthedocs.io/en/1.9.0/project.html 
 
 $ pip3 install apache-airflow[mssql] 
@@ -45,8 +48,13 @@ $ airflow webserver -p 8080
 
 # Checkpoints while running DAG- 
 •	check if airflow scheduler is running 
+
 •	check if airflow webserver is running 
+
 •	check if all DAGs are set to On in the web UI 
+
 •	check if the DAGs have a start date which is in the past 
+
 •	check if the DAGs have a proper schedule (before the schedule date) which is shown in the web UI 
+
 •	check if the dag has the proper pool and queue. 

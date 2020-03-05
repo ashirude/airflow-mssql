@@ -33,7 +33,7 @@ Now Airflow will create the $AIRFLOW_HOME folder and lay an “airflow.cfg” fi
 
 Inside airflow.cfg file : 
 1. Set load_examples = False
-2. Set sql_alchemy_conn = mssql+pyodbc://"login":"password"@"serverIP"/airflow_test_DB?driver={pathofodbcDriver} 
+2. Set sql_alchemy_conn = mssql+pyodbc://'<login>':'<password>'@'<serverIP>'/'<airflow_test_DB>'?driver={'<pathofodbcDriver>'} 
 
 NOTE : Do not install pymssql. This gives error - 'str' object has no attribute 'tzinfo'. Tried all timezone aware methods but got no success. Probably missed some airflow or sqlAlchemy configurations.
 https://airflow.apache.org/docs/stable/timezone.html 
@@ -48,7 +48,7 @@ start the web server, default port is 8080
 $ airflow webserver -p 8080
 
 1. Edit coonnections inside airflow UI --> Admin --> Connections
-2. Create DAG - repo contains an example DAG. Set mssql_conn_id = '<newly_created_connection>'
+2. Create DAG : repo contains an example DAG.  Inside DAG task, Set mssql_conn_id = '<newly_created_connection>'
 
 # Checkpoints while running DAG
 •	check if airflow scheduler is running 
